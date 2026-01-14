@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredients - Nannari Sharbat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Specific header for the ingredients content */
+        .ingredients-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .ingredients-header h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .ingredients-header p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 0.95rem;
+        }
+
+        .hero-img-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background-image: url("https://uploads.onecompiler.io/42u9xvqj6/44a6jr985/WhatsApp%20Image%202026-01-10%20at%2015.38.46.jpeg");
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 30px;
+        }
+
+        .hero-img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 30px 0 20px;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .section-header i {
+            color: #2d8a5a;
+        }
+
+        /* Grid Layout for Cards */
+        .ingredients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 24px;
+              background: #eefaf3;
+            color: #2d8a5a;
+            transition: transform 0.2s;
+            flex: 0 1 calc(50% - 10px);
+            min-width: 280px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .card-top h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .badge {
+            background: #eefaf3;
+            color: #2d8a5a;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #f1f5f9;
+            color: #475569;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        /* DON'T USE SECTION */
+        .dont-use-box {
+            background-color: #fff8f8;
+            border: 1px solid #ffebeb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .dont-use-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b91c1c;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .dont-use-box > p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .dont-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .dont-list li {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #444;
+        }
+
+        .dont-list li i {
+            color: #ef4444;
+            font-size: 0.8rem;
+        }
+
+        /* NUTRITION SECTION */
+        .nutrition-card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 30px;
+            
+        }
+
+        .serving-text {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            padding-left: 15px;
+        }
+
+        .stat-item h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .stat-item span {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Borders with colors */
+        .calories { border-left: 4px solid #3b82f6; }
+        .carbs { border-left: 4px solid #10b981; }
+        .fat { border-left: 4px solid #8b5cf6; }
+
+        .extra-info {
+            font-size: 0.85rem;
+            color: #444;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 20px;
+        }
+
+        .extra-info ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            .ingredients-grid, .dont-list {
+                grid-template-columns: 1fr;
+            }
+            .stats-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .ingredients-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ingredients-header h1 {
+                font-size: 1.3rem;
+            }
+            .ingredients-grid,
+            .dont-list {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                padding: 16px;
+            }
+            .stat-item h4 {
+                font-size: 1.3rem;
+            }
+            .dont-use-box {
+                padding: 20px;
+            }
+        }
+ #tred{
+  background: rgba(59, 130, 246, 0.1);
+  color: #1d4ed8;
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+#no {
+  background: rgba(168, 85, 247, 0.1);
+  color: #7e22ce;
+  border-color: rgba(168, 85, 247, 0.2);
+}
+  /* ====================================================
+   DESKTOP FINAL FIX – NUTRITION + QUALITY + HEADING PIN
+   ==================================================== */
+@media (min-width: 1025px) {
+
+  .container {
+    max-width: 1200px !important;
+    padding: 40px 30px !important;
+  }
+
+  /* ===============================
+     NUTRITION HEADING – PIN & ALIGN
+  =============================== */
+  .section-header:has(i.fa-wine-glass) {
+    max-width: 1000px;
+    margin: 60px auto 30px;
+    justify-content: flex-start;
+  }
+
+  /* ===============================
+     NUTRITION SECTION – LAYOUT FIX
+  =============================== */
+  .nutrition-card {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: stretch;
+  }
+
+  .stat-item {
+    padding-left: 18px;
+  }
+
+  /* ===============================
+     OUR QUALITY STANDARDS – GRID FIX
+  =============================== */
+  .section-header + .ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .section-header + .ingredients-grid .card {
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+}
+/* ====================================================
+   DESKTOP – CENTER ALL SECTION HEADINGS
+   ==================================================== */
+@media (min-width: 1025px) {
+
+  .section-header {
+    justify-content: center;
+    text-align: center;
+    margin: 60px auto 30px;
+  }
+
+}
+/* ====================================================
+   DESKTOP – CENTER ONLY NUTRITION TITLE
+   ==================================================== */
+@media (min-width: 1025px) {
+  .nutrition-title {
+    justify-content: center;
+    text-align: center;
+    margin: 60px auto 30px;
+  }
+}
+/* ====================================================
+   DESKTOP – PERFECT CENTER NUTRITION HEADING
+   ==================================================== */
+@media (min-width: 1025px) {
+
+  .section-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .section-header i.fa-wine-glass {
+    margin-right: 37%;
+    
+  }
+
+  .section-header:has(.fa-wine-glass) {
+    max-width: 1200px;
+    margin: 60px auto 30px 59px;
+    text-align: center;
+    
+  }
+}
+/* ====================================================
+   DESKTOP – CENTER NUTRITION HEADING (ICON + TEXT)
+   ==================================================== */
+@media (min-width: 1025px) {
+
+  .section-header {
+    display: flex;
+    justify-content: center;   /* center icon + text */
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin: 60px auto 30px;
+  }
+
+  .section-header i.fa-wine-glass {
+    margin-right: 8px;        /* space between icon & text */
+  }
+
+}
+
+/* ====================================================
+   DESKTOP – ONLY NUTRITION HEADING SHIFT
+   ==================================================== */
+@media (min-width: 1025px) {
+
+  .nutrition-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 60px auto 30px;
+    text-align: center;
+
+    transform: translateX(30%); /* 🔥 only this heading moves */
+  }
+
+  .nutrition-header i.fa-wine-glass {
+    margin-right: 8px;
+  }
+
+}
+.nannari-footer {
+    background-color: #1a1a1a; /* Dark Premium Background */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f39c12; /* Golden/Nannari color */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+    padding-left: 5px;
+}
+
+/* Social Icons Styling */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #f39c12;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #777;
+}
+    </style>
+</head>
+<body>
+  <header class="premium-header">
+    <div class="header-container">
+      <div class="nav-left">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="desktop-nav">
+          <a href="index.html">Product</a>
+          <a href="about.html">About Nannari</a>
+          <a href="healthbenfits.html">Health Benefits</a>
+          <a href="ingredients.html">Ingredients</a>
+          <a href="return&refundpolicy.html">Return & Refund</a>
+        </nav>
+      </div>
+      <div class="logo-wrapper">
+        <img src="https://uploads.onecompiler.io/42u9xvqj6/44a5jktvy/photo_6226685471274765403_w-removebg-preview.png" alt="Nannari Sharbat Logo" class="brand-logo">
+      </div>
+      <div class="nav-right">
+        <div class="cart-icon" onclick="goToCheckout()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+
+<!-- Section Navigation -->
+<nav class="section-nav">
+  <div class="section-nav-container">
+    <a href="index.html" class="section-nav-link">Product</a>
+    <a href="about.html" class="section-nav-link">About</a>
+    <a href="healthbenfits.html" class="section-nav-link">Benefits</a>
+    <a href="ingredients.html" class="section-nav-link active">Ingredients</a>
+    <a href="return&refundpolicy.html" class="section-nav-link">Return & Refund</a>
+  </div>
+</nav>
+
+<section class="container">
+    <header class="ingredients-header">
+        <h1>Pure Natural Ingredients</h1>
+        <p>Transparency is our promise. We believe you deserve to know exactly what goes into every bottle of our Nannari Sharbat.</p>
+        <div class="hero-img-container">
+            <img src="https://uploads.onecompiler.io/42u9xvqj6/44a6jr985/WhatsApp%20Image%202026-01-10%20at%2015.38.46%20(2).jpeg" alt="Natural Herbs">
+        </div>
+    </header>
+
+   <div class="section-header nutrition-title">
+  <i class="fa-solid fa-wine-glas" id="glass"></i> what's inside
+</div>
+
+
+    <div class="ingredients-grid">
+        <div class="card">
+            <div class="card-top">
+                <h3>Nannari Root Extract</h3>
+                
+            </div>
+            <p>Premium quality Hemidesmus indicus root extract sourced from organic farms in South India.</p>
+            <div class="tags">
+                <span class="tag">Natural coolant</span>
+                <span class="tag">Blood purifier</span>
+                <span class="tag">Rich in antioxidants</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <h3>Pure Cane Sugar</h3>
+              
+            </div>
+            <p>Naturally sweet. No artificial sweeteners.</p>
+            <div class="tags">
+                <span class="tag">Natural energy source</span>
+                <span class="tag">Unrefined</span>
+                <span class="tag">No chemicals</span>
+            </div>
+        </div>
+
+       
+
+
+    <div class="dont-use-box">
+        <div class="dont-use-header">
+            <i class="fa-regular fa-circle-xmark"></i> What We DON'T Use
+        </div>
+        <p>We are committed to providing you with the purest, most natural product. Here's what you'll NEVER find in our Nannari Sharbat:</p>
+        <ul class="dont-list">
+            <li><i class="fa-solid fa-circle-dot"></i> No Preservatives</li>
+            <li><i class="fa-solid fa-circle-dot"></i> No HFCS</li>
+            <li><i class="fa-solid fa-circle-dot"></i> No Artificial Flavours</li>
+            <li><i class="fa-solid fa-circle-dot"></i> No GMOs</li>
+            <li><i class="fa-solid fa-circle-dot"></i> No Animal Ingredients</li>
+            <li><i class="fa-solid fa-circle-dot"></i> GMO ingredients</li>
+            <li><i class="fa-solid fa-circle-dot"></i> Harmful chemicals or toxins</li>
+            <li><i class="fa-solid fa-circle-dot"></i> Animal-derived ingredients</li>
+        </ul>
+    </div>
+
+   <div class="section-header nutrition-header">
+  <i class="fa-solid fa-wine-glass"></i> Nutritional Information
+</div>
+
+
+    <div class="nutrition-card">
+        <p class="serving-text">Per Serving (25 ml concentrate, diluted in 200 ml water)</p>
+        <div class="stats-row">
+            <div class="stat-item calories">
+                <h4>65</h4>
+                <span>Calories</span>
+            </div>
+            <div class="stat-item carbs">
+                <h4>16.3g</h4>
+                <span>Total Carbohydrates</span>
+            </div>
+            <div class="stat-item fat">
+                <h4>0g</h4>
+                <span>Fat</span>
+            </div>
+        </div>
+
+        <div class="extra-info">
+            <p>Also contains trace amounts of:</p>
+            <ul>
+                <li>Natural antioxidants from Nannari root</li>
+                <li>Essential oils and aromatic compounds</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <i class="fa-solid fa-circle-check"></i> Our Quality Standards
+    </div>
+    <div class="ingredients-grid">
+        <div class="card">
+            <h3>Organic Sourcing</h3>
+            <p>All our herbs are sourced from certified organic farms that follow sustainable farming practices.</p>
+        </div>
+       
+        <div class="card" id="tred">
+            <h3>Traditional Methods</h3>
+            <p>Prepared using time-honoured Ayurvedic processes to help retain the herb’s natural properties.</p>
+        </div>
+        <div class="card" id="no">
+            <h3>No Compromise</h3>
+            <p>We never compromise on quality. Only the finest ingredients make it into our bottles.</p>
+        </div>
+    </div>
+
+    <div class="cert-banner">
+        <h2>Certifications & Compliance</h2>
+        <p>Our Nannari Sharbat is manufactured in FSSAI-certified facilities following strict hygiene and quality standards.</p>
+        <div class="cert-badges">
+            <span class="c-badge bg-green">FSSAI Certified</span>
+           
+            <span class="c-badge bg-purple">100% Vegetarian</span>
+            <span class="c-badge bg-orange">No Preservatives</span>
+        </div>
+    </div>
+</section>
+<footer class="nannari-footer">
+    <div class="footer-container">
+        <div class="footer-section brand-info">
+            <h2 class="footer-logo">NANNARI</h2>
+            <p>Experience the authentic taste of nature with our traditional Nannari extracts. Refreshing your body and soul naturally.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nannari.in?igsh=b21qZmo1ZDZjNzU3&utm_source=qr" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Product</a></li>
+                <li><a href="about.html">About Nannari</a></li>
+                <li><a href="healthbenfits.html">Health Benefits</a></li>
+                <li><a href="ingredients.html">Ingredients</a></li>
+                <li><a href="return&refundpolicy.html">Return & Refund Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 001-RJ Residency, Parthasaradhi Nagar, Dharmavaram, 515671</p>
+            <p><i class="fas fa-phone"></i> 8121414656</p>
+            <p><i class="fas fa-envelope"></i> info@nannari.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nannari. All Rights Reserved. Crafted with ❤️</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="script.js"></script>
+</body>
+</html>

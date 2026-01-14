@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Nannari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+<style>
+  .image-box {
+  width: 100%;
+  height: 280px;
+  border-radius: 24px;
+  margin: 30px 0;
+
+  /* 🔥 HERO BACKGROUND IMAGE */
+  background-image: url("https://uploads.onecompiler.io/42u9xvqj6/44a6jr985/WhatsApp%20Image%202026-01-10%20at%2015.38.46.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.nannari-footer {
+    background-color: #1a1a1a; /* Dark Premium Background */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f39c12; /* Golden/Nannari color */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+    padding-left: 5px;
+}
+
+/* Social Icons Styling */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #f39c12;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #777;
+}
+</style>
+</head>
+<body>
+  <header class="premium-header">
+    <div class="header-container">
+      <div class="nav-left">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="desktop-nav">
+          <a href="index.html">Product</a>
+          <a href="about.html">About Nannari</a>
+          <a href="healthbenfits.html">Health Benefits</a>
+          <a href="ingredients.html">Ingredients</a>
+          <a href="return&refundpolicy.html">Return & Refund</a>
+        </nav>
+      </div>
+      <div class="logo-wrapper">
+        <img src="https://uploads.onecompiler.io/42u9xvqj6/44a5jktvy/photo_6226685471274765403_w-removebg-preview.png" alt="Nannari Sharbat Logo" class="brand-logo">
+      </div>
+      <div class="nav-right">
+        <div class="cart-icon" onclick="goToCheckout()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+
+<!-- Section Navigation -->
+<nav class="section-nav">
+  <div class="section-nav-container">
+    <a href="index.html" class="section-nav-link">Product</a>
+    <a href="about.html" class="section-nav-link active">About</a>
+    <a href="healthbenfits.html" class="section-nav-link">Benefits</a>
+    <a href="ingredients.html" class="section-nav-link">Ingredients</a>
+    <a href="return&refundpolicy.html" class="section-nav-link">Return & Refund</a>
+  </div>
+</nav>
+
+<section class="container">
+  <h2 class="title">About Nannari</h2>
+
+  <div class="image-box"></div>
+
+  <p class="paragraph">
+   Nannari is a traditional South Indian herbal drink made from the roots of Indian sarsaparilla. For centuries, it has been trusted as a natural summer cooler—clean, functional, and effective. No hype. Just results.
+  </p>
+
+  <p class="paragraph">
+Our Nannari is built for today’s consumer without compromising its roots.
+We focus on purity, consistency, and taste—using authentic Nannari root extract, balanced sweetness, and a process that preserves the drink’s natural cooling properties. The result is a beverage that feels traditional at heart but modern in execution—easy to mix, refreshing to drink, and reliable in quality every single time.
+  </p>
+
+  <div class="card">
+    <i class="fa-solid fa-leaf premium-icon"></i>
+    <div>
+      <h4>Authentic Root Extract</h4>
+      <p>Real Nannari roots. Naturally cooling.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-spa premium-icon"></i>
+    <div>
+      <h4>Cooling & Hydrating</h4>
+      <p>Helps reduce body heat. Everyday refreshment.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-mortar-pestle premium-icon"></i>
+    <div>
+      <h4>Clean Formulation</h4>
+      <p>No unnecessary additives. Pure and balanced.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <i class="fa-solid fa-certificate premium-icon"></i>
+    <div>
+      <h4>Premium Taste</h4>
+      <p>Smooth flavour. Easy to mix and enjoy.</p>
+    </div>
+  </div>
+  <div class="card">
+    <i class="fa-solid fa-certificate premium-icon"></i>
+    <div>
+      <h4>Quality Assured</h4>
+      <p>Controlled process. Consistent in every bottle.</p>
+    </div>
+  </div>
+
+  
+
+  <h3 class="sub-title">Why Choose Our Nannari Sharbat?</h3>
+
+  <div class="feature green">
+    100% Pure & Natural
+    <small>No artificial additives. No compromises on purity.</small>
+  </div>
+
+  <div class="feature blue">
+    Traditionally Crafted
+    <small>Prepared using time-honoured herbal methods with authentic Nannari roots.</small>
+  </div>
+
+  <div class="feature pink">
+   Quality Assured
+    <small>Certified for safety, hygiene, and consistent quality in every batch.</small>
+  </div>
+
+</section>
+<footer class="nannari-footer">
+    <div class="footer-container">
+        <div class="footer-section brand-info">
+            <h2 class="footer-logo">NANNARI</h2>
+            <p>Experience the authentic taste of nature with our traditional Nannari extracts. Refreshing your body and soul naturally.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nannari.in?igsh=b21qZmo1ZDZjNzU3&utm_source=qr" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+               <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Product</a></li>
+                <li><a href="about.html">About Nannari</a></li>
+                <li><a href="healthbenfits.html">Health Benefits</a></li>
+                <li><a href="ingredients.html">Ingredients</a></li>
+                <li><a href="return&refundpolicy.html">Return & Refund Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 001-RJ Residency, Parthasaradhi Nagar, Dharmavaram, 515671</p>
+            <p><i class="fas fa-phone"></i> 8121414656</p>
+            <p><i class="fas fa-envelope"></i> info@nannari.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nannari. All Rights Reserved. Crafted with ❤️</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="script.js"></script>
+</body>
+</html>

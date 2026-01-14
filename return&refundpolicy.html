@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return & Refund Policy - Nannari Sharbat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --light-green: #f1f8e9;
+            --accent-green: #c8e6c9;
+            --text-dark: #1b5e20;
+            --text-gray: #4a4a4a;
+            --white: #ffffff;
+            --warning-yellow: #fff9c4;
+            --alert-red: #c62828;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, sans-serif; 
+            background-color: #fafdfb; 
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* --- POLICY HERO --- */
+        .policy-hero {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-green);
+        }
+        .policy-hero h1 {
+            font-size: 30px;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- CONTENT SECTION --- */
+        .content-container {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .policy-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-green);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .step-list { list-style: none; margin: 10px 0; }
+        .step-list li { margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .step-list li::before { content: "•"; color: var(--primary-green); position: absolute; left: 0; font-weight: bold; }
+
+        .address-box {
+            background: #f1f8e9;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 1.5px dashed var(--primary-green);
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        /* --- USAGE INSTRUCTION CARD --- */
+        .usage-card {
+            background: var(--warning-yellow);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid #fff176;
+            color: #5d4037;
+        }
+        .usage-card h2 { color: #827717; display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+
+        /* --- CONTACT BOX --- */
+        .contact-section {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .contact-link {
+            background: var(--primary-green);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center; gap: 8px;
+            transition: 0.3s;
+        }
+        .contact-link:hover { background: #1b5e20; transform: translateY(-2px); 
+        }
+
+ .nannari-footer {
+    background-color: #1a1a1a; /* Dark Premium Background */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f39c12; /* Golden/Nannari color */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+    padding-left: 5px;
+}
+
+/* Social Icons Styling */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #f39c12;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #777;
+}
+
+        /* Desktop Footer Styling */
+        @media (min-width: 1025px) {
+            .footer-container {
+                display: block !important;
+                max-width: 1300px !important;
+                margin: 0 auto !important;
+                padding: 0 40px !important;
+                text-align: center !important;
+            }
+
+            .footer-section {
+                display: inline-block !important;
+                vertical-align: top !important;
+                width: 32% !important;
+                text-align: left !important;
+                margin: 0 !important;
+            }
+
+            .footer-section:nth-child(2) {
+                text-align: center !important;
+            }
+
+            .footer-section:nth-child(2) ul li {
+                display: inline-block !important;
+                margin: 0 10px !important;
+            }
+
+            .footer-section:nth-child(2) ul {
+                display: block !important;
+                text-align: center !important;
+            }
+
+            .footer-section:nth-child(3) {
+                text-align: right !important;
+            }
+        }
+    </style>
+</head>
+<body>
+  <header class="premium-header">
+  <div class="header-container">
+    <div class="nav-left">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="desktop-nav">
+        <a href="index.html">Product</a>
+        <a href="about.html">About Nannari</a>
+        <a href="healthbenfits.html">Health Benefits</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="return&refundpolicy.html">Return & Refund</a>
+      </nav>
+    </div>
+
+    <div class="logo-wrapper">
+      <img src="https://uploads.onecompiler.io/42u9xvqj6/44a5jktvy/photo_6226685471274765403_w-removebg-preview.png" alt="Nannari Sharbat Logo" class="brand-logo">
+    </div>
+
+    <div class="nav-right">
+      <div class="cart-icon" onclick="goToCheckout()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+
+  </header>
+
+<!-- Section Navigation -->
+<nav class="section-nav">
+  <div class="section-nav-container">
+    <a href="index.html" class="section-nav-link">Product</a>
+    <a href="about.html" class="section-nav-link">About</a>
+    <a href="healthbenfits.html" class="section-nav-link">Benefits</a>
+    <a href="ingredients.html" class="section-nav-link">Ingredients</a>
+    <a href="return&refundpolicy.html" class="section-nav-link active">Return & Refund</a>
+  </div>
+</nav>
+
+   
+
+    <section class="policy-hero">
+        <h1>Refund & Return Policy</h1>
+        <p>Your satisfaction is our priority. Please review our policies regarding returns, damages, and important usage instructions.</p>
+    </section>
+
+    <main class="content-container">
+        
+        <div class="usage-card">
+            <h2><i class="fas fa-info-circle"></i> Important Usage Instruction</h2>
+            <p>Nannari Sharbat is highly concentrated and sensitive to direct water contact. <strong>If even a single drop of water enters the bottle, the product quality may be affected.</strong></p>
+            <ul class="step-list" style="margin-top: 10px;">
+                <li>Do not add water directly into the bottle.</li>
+                <li>Always take the required quantity using a <strong>dry spoon</strong> and mix it separately with water or milk in a glass.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card" style="border-left-color: var(--alert-red);">
+            <h2 class="section-title" style="color: var(--alert-red);"><i class="fas fa-shuttle-van"></i> Damaged on Arrival?</h2>
+            <p>If you receive a damaged or leaking Nannari bottle at delivery:</p>
+            <ul class="step-list">
+                <li><strong>Contact us within 24 hours</strong></li>
+                <li>Share clear photos/videos of:
+                    <ul style="padding-left: 20px; list-style-type: circle;">
+                        <li>The damaged bottle</li>
+                        <li>Outer packaging</li>
+                        <li>Shipping label</li>
+                    </ul>
+                </li>
+                <li>Once inspected and approved, a replacement will be dispatched within <strong>3–5 business days</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2 class="section-title"><i class="fas fa-hand-holding-usd"></i> Refunds (If Applicable)</h2>
+            <ul class="step-list">
+                <li>Refunds are issued <strong>only if a replacement is not possible</strong>.</li>
+                <li>Processed within 3 business days after approval.</li>
+                <li>Amount credited to original payment method within <strong>5–7 business days</strong>.</li>
+            </ul>
+        </div>
+
+        <div class="policy-card">
+            <h2 class="section-title"><i class="fas fa-undo"></i> Standard Returns</h2>
+            <p>Items can be returned within 2 days of delivery if unused and labels are intact. Please ship to:</p>
+            <div class="address-box">
+                Nannari Sharbat Warehouse,<br>
+                001-RJ Residency, Parthasaradhi Nagar, Dharmavaram,<br>
+                Andhra Pradesh - 515671, India
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h3 style="margin-bottom: 10px;">Need Help?</h3>
+            <div class="contact-grid">
+                <a href="tel:+918121414656" class="contact-link"><i class="fas fa-phone-alt"></i> +91 8121414656</a>
+                <a href="mailto:contact@nannari.com" class="contact-link" style="background: #2d3436;"><i class="fas fa-envelope"></i> contact@nannari.com</a>
+            </div>
+        </div>
+
+    </main>
+
+<footer class="nannari-footer">
+    <div class="footer-container">
+        <div class="footer-section brand-info">
+            <h2 class="footer-logo">NANNARI</h2>
+            <p>Experience the authentic taste of nature with our traditional Nannari extracts. Refreshing your body and soul naturally.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nannari.in?igsh=b21qZmo1ZDZjNzU3&utm_source=qr" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Product</a></li>
+                <li><a href="about.html">About Nannari</a></li>
+                <li><a href="healthbenfits.html">Health Benefits</a></li>
+                <li><a href="ingredients.html">Ingredients</a></li>
+                <li><a href="return&refundpolicy.html">Return & Refund Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 001-RJ Residency, Parthasaradhi Nagar, Dharmavaram, 515671</p>
+            <p><i class="fas fa-phone"></i> 8121414656</p>
+            <p><i class="fas fa-envelope"></i> info@nannari.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nannari. All Rights Reserved. Crafted with ❤️</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="script.js"></script>
+</body>
+</html>

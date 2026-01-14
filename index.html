@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+.inline-benefits-container {
+            display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around; /* Mobile lo space baguntundi */
+        align-items: center;
+        gap: 15px;
+        padding: 20px 10px;
+        width: 100%;
+        background: #fff; /* Background white unte icons baga kanipisthayi */
+    }
+
+    .benefit-inline-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: fit-content;
+    }
+
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        background: rgba(144, 238, 144, 0.2); /* Light Green background */
+        color: #90EE90; /* Icon Color */
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    /* IMPORTANT: Icons visible avvadaniki ee CSS chala avasaram */
+    .icon-circle i, .icon-circle svg {
+        width: 20px !important;
+        height: 20px !important;
+        stroke-width: 2.5px; /* Icon dhabbu ga kanipinchadaniki */
+    }
+
+    .text-group {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .top-text {
+        font-size: 13px;
+        font-weight: 700;
+        color: #2d3436;
+        line-height: 1.2;
+    }
+
+    .bottom-text {
+        font-size: 11px;
+        color: #636e72;
+        line-height: 1.2;
+    }
+    /* General Layout */
+.size-options {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Individual Card Styling */
+.size-card {
+  flex: 1;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 15px 5px;
+  text-align: center;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+/* Selected State (Yellow Border) */
+.size-card.selected {
+  border: 2px solid #fbc02d;
+  background-color: #fffdf5;
+}
+
+/* Drop Icon Container */
+.drop-icon-container {
+  background-color: #ffa000;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.drop-icon {
+  font-size: 24px;
+  color: #4fc3f7; /* Water drop color */
+}
+
+/* Text Styles */
+.size-label {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 5px 0;
+  color: #000;
+}
+
+.volume {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 4px 0;
+  color: #000;
+}
+
+.mrp {
+  font-size: 12px;
+  color: #999;
+  margin: 2px 0;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+.discount {
+  font-size: 14px;
+  color: #2e7d32; /* Green color */
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .size-options {
+    flex-wrap: nowrap;
+    overflow-x: auto; /* పక్కకి స్క్రోల్ అయ్యేలా చేస్తుంది */
+    padding-bottom: 15px;
+  }
+  
+  .size-card {
+    flex: 0 0 31%; /* స్క్రీన్ వెడల్పులో 3 కార్డులు సరిపోయేలా */
+  }
+  
+  .section-titlee {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
+
+    /* Mobile Responsive Logic */
+    @media (max-width: 480px) {
+        .inline-benefits-container {
+            gap: 10px;
+            padding: 15px 5px;
+            justify-content: space-between;
+        }
+        .top-text { font-size: 11px; }
+        .bottom-text { font-size: 10px; }
+        .icon-circle { width: 34px; height: 34px; }
+        .icon-circle i, .icon-circle svg { width: 16px !important; height: 16px !important; }
+    }
+    .prime-add-button {
+  width: 100%;
+  background-color: #ffa000;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  
+}
+.nannari-footer {
+    background-color: #1a1a1a; /* Dark Premium Background */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f39c12; /* Golden/Nannari color */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+    padding-left: 5px;
+}
+
+/* Social Icons Styling */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #f39c12;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #777;
+}
+/* Hero Slider Styles */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dots Styling */
+.slider-dots {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #ffa000; /* Matching your theme yellow/orange */
+    width: 25px; /* Makes active dot a bit longer/capsule shape */
+    border-radius: 10px;
+}
+
+/* Mobile height adjustment */
+@media (max-width: 480px) {
+    .hero { height: 550px; }
+}
+.reviews-section {
+    padding: 80px 0;
+    background-color: #fdfaf5; /* Light creamy background */
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: #2c3e50;
+}
+
+.reviews-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.reviews-track {
+    display: flex;
+    width: calc(320px * 14); /* (Card width + margin) * total cards */
+    animation: scrollAnimation 30s linear infinite;
+}
+
+.review-card {
+    width: 300px;
+    background: #fff;
+    margin: 0 10px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    flex-shrink: 0; /* Cards ni compress avvakunda chestundi */
+    white-space: normal;
+    border: 1px solid #eee;
+}
+
+.stars {
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+.review-card h4 {
+    margin-top: 15px;
+    color: #e67e22;
+    font-size: 14px;
+}
+
+/* Keyframes for smooth infinite movement */
+@keyframes scrollAnimation {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-320px * 10)); } /* Moves exactly 10 cards */
+}
+
+/* Pause on Hover */
+.reviews-track:hover {
+    animation-play-state: paused;
+}
+@media (min-width: 1024px) {
+  #addToCartBtn {
+    width: fit-content;   /* content width matrame */
+    margin: 0 auto;       /* center */
+    display: block;       /* margin auto work avvali */
+    padding: 14px 36px;   /* desktop look */
+  }
+}
+@media (min-width: 1024px) {
+  .section-titlee {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; /* text width matrame */
+  }
+}
+
+</style>
+<body>
+  <header class="premium-header">
+  <div class="header-container">
+    <div class="nav-left">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="desktop-nav">
+        <a href="index.html">Product</a>
+        <a href="about.html">About Nannari</a>
+        <a href="healthbenfits.html">Health Benefits</a>
+        <a href="ingredients.html">Ingredients</a>
+        <a href="return&refundpolicy.html">Return & Refund</a>
+      </nav>
+    </div>
+
+    <div class="logo-wrapper">
+      <img src="https://uploads.onecompiler.io/42u9xvqj6/44a5jktvy/photo_6226685471274765403_w-removebg-preview.png" alt="Nannari Sharbat Logo" class="brand-logo">
+    </div>
+
+    <div class="nav-right">
+      <div class="cart-icon" onclick="goToCheckout()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- Section Navigation -->
+<nav class="section-nav">
+  <div class="section-nav-container">
+    <a href="index.html" class="section-nav-link active">Product</a>
+    <a href="about.html" class="section-nav-link">About</a>
+    <a href="healthbenfits.html" class="section-nav-link">Benefits</a>
+    <a href="ingredients.html" class="section-nav-link">Ingredients</a>
+    <a href="return&refundpolicy.html" class="section-nav-link">Return & Refund</a>
+  </div>
+</nav>
+
+<!-- Floating marquee placed in its own section -->
+<section class="floating-marquee-section">
+  <div class="premium-marquee-container">
+    <div class="marquee-content">
+      <div class="marquee-promo">
+        <span class="label">EXCLUSIVE OFFER</span>
+        <span class="main-text">Buy 750ml x 2, Get <span class="amount">₹50</span> Cashback</span>
+      </div>
+      <div class="marquee-promo">
+        <span class="label">EXCLUSIVE OFFER</span>
+        <span class="main-text">Buy 750ml x 2, Get <span class="amount">₹50</span> Cashback</span>
+      </div>
+      <div class="marquee-promo">
+        <span class="label">EXCLUSIVE OFFER</span>
+        <span class="main-text">Buy 750ml x 2, Get <span class="amount">₹50</span> Cashback</span>
+      </div>
+      <div class="marquee-promo">
+        <span class="label">EXCLUSIVE OFFER</span>
+        <span class="main-text">Buy 750ml x 2, Get <span class="amount">₹50</span> Cashback</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="slider-container">
+    <div class="slide active">
+      <img class="hero-img-1" src="https://uploads.onecompiler.io/44544cwde/449fkyese/1000374318.jpg" alt="Nannari Hero 1">
+    </div>
+    <div class="slide">
+      <img class="hero-img-2" src="https://uploads.onecompiler.io/42u9xvqj6/44acxbdg3/ChatGPT%20Image%20Jan%2013,%202026,%2001_25_21%20PM.png" alt="Nannari Hero 2">
+    </div>
+    <div class="slide">
+      <img class="hero-img-3" src="https://uploads.onecompiler.io/42u9xvqj6/44a9bgu8x/WhatsApp%20Image%202026-01-11%20at%2022.28.00.jpeg" alt="Nannari Hero 3">
+    </div>
+
+    <div class="slider-dots">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+  </div>
+</section>
+<section class="products-section">
+  <div class="product-card">
+    <div class="product-info">
+      <h2 class="product-title">Nannari Sharbat</h2>
+      <p class="product-specs">Traditional Root Extract  Summer Body Coolant</p>
+      
+      <div class="product-meta">
+        <span class="meta-text">Natural Body Coolant</span>
+        
+      </div>
+
+<div class="rating-container" style="margin-bottom: 5px;"> <div class="stars" style="display: inline-block;">★★★★★</div>
+    <span id="review-trigger" class="review-count" style="cursor: pointer; color: #f39c12; text-decoration: underline; font-size: 14px; margin-left: 5px;">
+        (351 Reviews)
+    </span>
+    </div>
+
+<div class="price-container" style="margin-top: 5px;"> <span class="currency">Rs.</span>
+    <span class="amount">299</span>
+    <span class="ml">(1000ml)</span>
+</div>
+</section>
+<div class="product-selection-container">
+  
+ <div class="inline-benefits-container">
+    <div class="benefit-inline-item">
+        <div class="icon-circle"><i data-lucide="leaf"></i></div>
+        <div class="text-group">
+            <span class="top-text">100% Natural</span>
+            <span class="bottom-text">Ingredients</span>
+        </div>
+    </div>
+
+    <div class="benefit-inline-item">
+        <div class="icon-circle"><i data-lucide="thermometer-snowflake"></i></div>
+        <div class="text-group">
+            <span class="top-text">Cooling</span>
+            <span class="bottom-text">Effect</span>
+        </div>
+    </div>
+
+    <div class="benefit-inline-item">
+        <div class="icon-circle"><i data-lucide="scroll"></i></div>
+        <div class="text-group">
+            <span class="top-text">Traditional</span>
+            <span class="bottom-text">Recipe</span>
+        </div>
+    </div>
+</div>
+  </div>
+
+  <h3 class="section-titlee">Select Size:</h3>
+  <div class="size-options">
+    <div class="size-card">
+      <div class="drop-icon-container">
+        <span class="drop-icon">💧</span>
+      </div>
+      <p class="size-label">Regular</p>
+      <p class="volume">750ml</p>
+      <p class="price">Rs. 249</p>
+      <p class="mrp">MRP <span class="strike">Rs. 299</span></p>
+      <p class="discount">25% OFF</p>
+    </div>
+
+    <div class="size-card selected">
+      <div class="drop-icon-container">
+        <span class="drop-icon">💧</span>
+      </div>
+      <p class="size-label">Best Value</p>
+      <p class="volume">1000ml</p>
+      <p class="price">Rs. 299</p>
+      <p class="mrp">MRP <span class="strike">Rs. 399</span></p>
+      <p class="discount">25% OFF</p>
+    </div>
+
+    <div class="size-card">
+      <div class="drop-icon-container">
+        <span class="drop-icon">💧</span>
+      </div>
+      <p class="size-label">Family Saver</p>
+      <p class="volume">750ml x 2</p>
+      <p class="price">Rs. 449</p>
+      <p class="mrp">MRP <span class="strike">Rs. 699</span></p>
+      <p class="discount">29% OFF</p>
+    </div>
+  </div>
+
+ <!-- Quantity Section -->
+<div class="quantity-wrapper" id="quantityWrapper" style="display:none;">
+  <p style="margin-bottom:8px;font-weight:600;">Enter Quantity</p>
+  <input 
+    type="number" 
+    id="quantityInput" 
+    value="1" 
+    min="1" 
+    style="
+      width:100%;
+      padding:10px;
+      font-size:16px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      margin-bottom:15px;
+    "
+  />
+</div>
+
+<button class="prime-add-button" id="addToCartBtn">
+  Rs. 0 | ADD TO CART
+</button>
+
+
+  <div class="shipping-tag">
+    <span>📦</span> Ships within 4-5 days
+  </div>
+</div>
+<br>
+
+<section id="reviews-display-section" class="reviews-section">
+    <h2 class="section-title">What Our Customers Say</h2>
+    <div class="reviews-slider">
+        <div class="reviews-track">
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Best Nannari syrup I've ever had. Pure and authentic!"</p><h4>- Ramesh Kumar</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Brings back my childhood memories. Very refreshing!"</p><h4>- Sneha Reddy</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Natural ingredients and great for health. Must try!"</p><h4>- Arjun Varma</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Perfect balance of sweetness and flavor. Love it!"</p><h4>- Priya Dharshini</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Best quality Nannari in the market right now."</p><h4>- Vijay Sethupathi</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Very cooling for the body during summers. 10/10!"</p><h4>- Lakshmi Devi</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Packaging is premium and delivery was very fast."</p><h4>- Rahul Singh</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"No artificial colors, just pure nature. Amazing!"</p><h4>- Dr. K. Rao</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"My whole family loves this drink. So refreshing!"</p><h4>- Anitha Garu</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Excellent customer service and top-notch quality."</p><h4>- Sanjay Shah</h4></div>
+
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Best Nannari syrup I've ever had. Pure and authentic!"</p><h4>- Ramesh Kumar</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Brings back my childhood memories. Very refreshing!"</p><h4>- Sneha Reddy</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Natural ingredients and great for health. Must try!"</p><h4>- Arjun Varma</h4></div>
+            <div class="review-card"><div class="stars">★★★★★</div><p>"Perfect balance of sweetness and flavor. Love it!"</p><h4>- Priya Dharshini</h4></div>
+        </div>
+    </div>
+</section>
+<br>
+<footer class="nannari-footer">
+    <div class="footer-container">
+        <div class="footer-section brand-info">
+            <h2 class="footer-logo">NANNARI</h2>
+            <p>Experience the authentic taste of nature with our traditional Nannari extracts. Refreshing your body and soul naturally.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nannari.in?igsh=b21qZmo1ZDZjNzU3&utm_source=qr" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+              <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Product</a></li>
+                <li><a href="about.html">About Nannari</a></li>
+                <li><a href="healthbenfits.html">Health Benefits</a></li>
+                <li><a href="ingredients.html">Ingredients</a></li>
+                <li><a href="return&refundpolicy.html">Return & Refund Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 001-RJ Residency, Parthasaradhi Nagar, Dharmavaram, 515671</p>
+            <p><i class="fas fa-phone"></i> 8121414656</p>
+            <p><i class="fas fa-envelope"></i> info@nannari.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nannari. All Rights Reserved. Crafted with ❤️</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+
+/* ===== SLIDER ===== */
+let slideIndex=0;
+const slides=document.querySelectorAll(".slide");
+const dots=document.querySelectorAll(".dot");
+
+function showSlide(i){
+  slides.forEach(s=>s.classList.remove("active"));
+  dots.forEach(d=>d.classList.remove("active"));
+  slides[i].classList.add("active");
+  dots[i].classList.add("active");
+  slideIndex=i;
+}
+
+setInterval(()=>{
+  slideIndex=(slideIndex+1)%slides.length;
+  showSlide(slideIndex);
+},3000);
+
+/* ===== PRODUCT LOGIC ===== */
+const sizeCards=document.querySelectorAll(".size-card");
+const qtyWrap=document.getElementById("quantityWrapper");
+const qtyInput=document.getElementById("quantityInput");
+const btn=document.getElementById("addToCartBtn");
+
+let selectedPrice=0;
+
+sizeCards.forEach(card=>{
+  card.addEventListener("click",()=>{
+
+    sizeCards.forEach(c=>c.classList.remove("selected"));
+    card.classList.add("selected");
+
+    const size=card.querySelector(".size-label").innerText;
+    const volume=card.querySelector(".volume").innerText;
+    const price=parseInt(card.querySelector(".price").innerText.replace(/\D/g,""));
+
+    selectedPrice=price;
+
+    localStorage.setItem("order_name","Nannari Sharbat");
+    localStorage.setItem("order_size",size);
+    localStorage.setItem("order_volume",volume);
+    localStorage.setItem("order_price",price);
+    localStorage.setItem("order_image",document.querySelector(".slide.active img").src);
+
+    qtyWrap.style.display="block";
+    qtyInput.value=1;
+
+    btn.disabled=false;
+    updateTotal();
+  });
+});
+
+qtyInput.addEventListener("input",updateTotal);
+
+function updateTotal(){
+  let qty = parseInt(qtyInput.value);
+  if (isNaN(qty)) {
+    qty = 0;
+  }
+  btn.innerText = `Rs. ${qty * selectedPrice} | ADD TO CART`;
+}
+
+qtyInput.addEventListener("blur", () => {
+  if (qtyInput.value === "" || parseInt(qtyInput.value) < 1) {
+    qtyInput.value = 1;
+    updateTotal();
+  }
+});
+
+btn.addEventListener("click",()=>{
+  localStorage.setItem("order_qty",qtyInput.value);
+  localStorage.setItem("order_total",qtyInput.value*selectedPrice);
+  updateCartBadge();
+  window.location.href="checkout.html";
+});
+</script>
+
+ 
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const reviewTrigger = document.getElementById('review-trigger');
+    const reviewSection = document.getElementById('reviews-display-section');
+    
+    if(reviewTrigger && reviewSection) {
+        reviewTrigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            reviewSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    }
+});
+</script>
+<script>/* ===== CART LOGIC ONLY ===== */
+const cartCountElement = document.querySelector(".cart-count");
+const cartIcon = document.querySelector(".cart-icon");
+
+// 1. Cart Count Update (Page load ainappudu)
+function updateCartBadge() {
+    let currentCount = localStorage.getItem("order_qty") || 0;
+    if (cartCountElement) {
+        cartCountElement.innerText = currentCount;
+    }
+}
+
+// Call on page load
+document.addEventListener('DOMContentLoaded', updateCartBadge);
+
+// 2. Cart Icon click chesthe checkout ki velladam
+if (cartIcon) {
+    cartIcon.style.cursor = "pointer";
+    cartIcon.onclick = function() {
+        window.location.href = "checkout.html";
+    };
+}
+</script>
+</body>
+</html>
+

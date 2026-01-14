@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Benefits of Nannari</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary-dark: #2d3436;
+            --icon-green: #90EE90;
+            --card-bg: #ffffff;
+            --text-main: #4a4a4a;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+
+        /* Specific header for the benefits content */
+        .benefits-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #636e72;
+            font-weight: 300;
+        }
+
+        /* Hero Image Placeholder */
+        .hero-box {
+            width: 100%;
+            height: 250px;
+            background: #dfe6e9;
+            border-radius: 24px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b2bec3;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Benefit Cards Styling */
+        .benefit-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-container {
+            width: 60px;
+            height: 60px;
+            background: rgba(144, 238, 144, 0.2);
+            color: var(--icon-green);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h3 {
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+        }
+
+        .benefit-content p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Consumption & Science Sections */
+        .info-section, .science-section {
+            background: #f9fff9;
+            border-radius: 24px;
+            padding: 40px;
+            margin-top: 30px;
+            border: 1px solid rgba(144, 238, 144, 0.3);
+        }
+
+        .info-section h2, .science-section h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .step-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background: var(--icon-green);
+            color: #1a301a;
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .science-text {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 480px) {
+            .benefit-card { flex-direction: column; text-align: center; }
+            h1 { font-size: 1.8rem; }
+            .info-section, .science-section { padding: 20px; }
+        }
+        .hero-box {
+  width: 100%;
+  height: 280px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+
+  /* 🔥 Background Image */
+  background-image: url("https://uploads.onecompiler.io/42u9xvqj6/44a6jr985/WhatsApp%20Image%202026-01-10%20at%2015.38.46%20(1).jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Optional premium look */
+  box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.nannari-footer {
+    background-color: #1a1a1a; /* Dark Premium Background */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f39c12; /* Golden/Nannari color */
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+    padding-left: 5px;
+}
+
+/* Social Icons Styling */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: #f39c12;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #777;
+}
+
+    </style>
+</head>
+<body>
+  <header class="premium-header">
+    <div class="header-container">
+      <div class="nav-left">
+        <div class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="desktop-nav">
+          <a href="index.html">Product</a>
+          <a href="about.html">About Nannari</a>
+          <a href="healthbenfits.html">Health Benefits</a>
+          <a href="ingredients.html">Ingredients</a>
+          <a href="return&refundpolicy.html">Return & Refund</a>
+        </nav>
+      </div>
+      <div class="logo-wrapper">
+        <img src="https://uploads.onecompiler.io/42u9xvqj6/44a5jktvy/photo_6226685471274765403_w-removebg-preview.png" alt="Nannari Sharbat Logo" class="brand-logo">
+      </div>
+      <div class="nav-right">
+        <div class="cart-icon" onclick="goToCheckout()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count">0</span>
+        </div>
+      </div>
+    </header>
+
+<!-- Section Navigation -->
+<nav class="section-nav">
+  <div class="section-nav-container">
+    <a href="index.html" class="section-nav-link">Product</a>
+    <a href="about.html" class="section-nav-link">About</a>
+    <a href="healthbenfits.html" class="section-nav-link active">Benefits</a>
+    <a href="ingredients.html" class="section-nav-link">Ingredients</a>
+    <a href="return&refundpolicy.html" class="section-nav-link">Return & Refund</a>
+  </div>
+</nav>
+
+<div class="container">
+    <header class="benefits-header">
+        <h1>Health Benefits of Nannari</h1>
+        <p class="subtitle">Experience the benefits of a time-tested Ayurvedic herb, trusted through centuries.</p>
+    </header>
+
+    <div class="hero-box"></div>
+
+    <div class="benefit-card">
+        <div class="icon-container"><i data-lucide="thermometer-snowflake"></i></div>
+        <div class="benefit-content">
+            <h3>Natural Body Coolant</h3>
+            <p>Helps regulate internal body heat, making it ideal for hot and humid conditions.</p>
+        </div>
+    </div>
+
+    <div class="benefit-card">
+        <div class="icon-container"><i data-lucide="droplets"></i></div>
+        <div class="benefit-content">
+            <h3>Supports Hydration</h3>
+            <p>Refreshing formulation that helps replenish fluids and prevent dehydration.</p>
+        </div>
+    </div>
+
+   
+
+    <div class="benefit-card">
+        <div class="icon-container"><i data-lucide="sparkles"></i></div>
+        <div class="benefit-content">
+            <h3>Natural Refreshment</h3>
+            <p>Helps you feel revived and provides an instant cooling energy boost.</p>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h2>How to Consume Nannari Sharbat</h2>
+        <div class="step-list">
+            <div class="step-item">
+                <div class="step-number">1</div>
+                <div>Mix 2-3 tablespoons of Nannari sharbat in a glass of cold water (200-250ml).</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">2</div>
+                <div>Stir well and add ice cubes for a refreshing summer drink.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">3</div>
+                <div>Consume 1-2 glasses daily for best results, especially during hot weather.</div>
+            </div>
+            <div class="step-item">
+                <div class="step-number">4</div>
+                <div>Can also be added to milk, smoothies, or used as a natural sweetener in desserts.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="science-section">
+        <h2>Backed by Science & Tradition</h2>
+        <p class="science-text">
+            Modern research has validated many of the traditional uses of Nannari. Studies have identified several bioactive compounds in the root, including flavonoids and saponins, which contribute to its therapeutic properties. Its effectiveness is documented in both Ayurvedic texts and contemporary scientific literature.
+        </p>
+    </div>
+</div>
+<footer class="nannari-footer">
+    <div class="footer-container">
+        <div class="footer-section brand-info">
+            <h2 class="footer-logo">NANNARI</h2>
+            <p>Experience the authentic taste of nature with our traditional Nannari extracts. Refreshing your body and soul naturally.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nannari.in?igsh=b21qZmo1ZDZjNzU3&utm_source=qr" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+               <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+            </div>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Product</a></li>
+                <li><a href="about.html">About Nannari</a></li>
+                <li><a href="healthbenfits.html">Health Benefits</a></li>
+                <li><a href="ingredients.html">Ingredients</a></li>
+                <li><a href="return&refundpolicy.html">Return & Refund Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i> 001-RJ Residency, Parthasaradhi Nagar, Dharmavaram, 515671</p>
+            <p><i class="fas fa-phone"></i> 8121414656</p>
+            <p><i class="fas fa-envelope"></i> info@nannari.com</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Nannari. All Rights Reserved. Crafted with ❤️</p>
+    </div>
+</footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<script src="script.js"></script>
+<script>
+    lucide.createIcons();
+</script>
+</body>
+</html>
