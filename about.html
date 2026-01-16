@@ -10,21 +10,36 @@
 
   <link rel="stylesheet" href="style.css">
 <style>
-  .image-box {
+ /* Optimized Merged Component */
+.image-box {
   width: 100%;
-  height: 280px;
+  /* Use aspect-ratio for perfect scaling on all devices */
+  aspect-ratio: 16 / 9; 
   border-radius: 24px;
-  margin: 30px 0;
-
-  /* 🔥 HERO BACKGROUND IMAGE */
-  background-image: url("https://uploads.onecompiler.io/42u9xvqj6/44a6jr985/WhatsApp%20Image%202026-01-10%20at%2015.38.46.jpeg");
-  background-size: cover;
-  background-position: center;
+  margin: 30px 0 40px 0;
+  
+  /* Background Image Logic */
+  background-image: url("https://uploads.onecompiler.io/42u9xvqj6/44arrmvps/WhatsApp%20Image%202026-01-16%20at%2015.40.39.jpeg");
+  background-size: cover; 
+  background-position: center; 
   background-repeat: no-repeat;
-
+  
+  /* Premium Shadow & Container Logic */
   box-shadow: 0 12px 35px rgba(0,0,0,0.15);
   position: relative;
   overflow: hidden;
+  display: block;
+}
+
+/* Desktop Polish */
+@media (min-width: 1024px) {
+  .image-box {
+    /* Cinematic wide-screen look for desktop */
+    aspect-ratio: 21 / 9; 
+    max-height: 500px;
+    /* Focus slightly higher (20%) to keep logos/heads from being cut off */
+    background-position: center 20%; 
+  }
 }
 .nannari-footer {
     background-color: #1a1a1a; /* Dark Premium Background */
@@ -114,6 +129,13 @@
     border-top: 1px solid #333;
     font-size: 14px;
     color: #777;
+}
+@media (max-width: 768px) {
+  .image-box {
+    height: 300px;
+    aspect-ratio: auto;
+    background-image: url("https://uploads.onecompiler.io/42u9xvqj6/44a6jr985/WhatsApp%20Image%202026-01-10%20at%2015.38.46.jpeg");
+  }
 }
 </style>
 </head>
@@ -260,7 +282,7 @@ We focus on purity, consistency, and taste—using authentic Nannari root extrac
         <div class="footer-section">
             <h3>Get in Touch</h3>
             <p><i class="fas fa-map-marker-alt"></i> 001-RJ Residency, Parthasaradhi Nagar, Dharmavaram, 515671</p>
-            <p><i class="fas fa-phone"></i> 8121414656</p>
+            <p><i class="fas fa-phone"></i> 7337030406</p>
             <p><i class="fas fa-envelope"></i> nannari.co.in@gmail.com</p>
         </div>
     </div>
